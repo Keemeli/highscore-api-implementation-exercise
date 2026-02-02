@@ -18,6 +18,8 @@ module.exports = {
     });
   },
   close: function () {
-    serverInstance.close();
+    if (serverInstance) {
+      serverInstance.close();
+    }
   },
 };

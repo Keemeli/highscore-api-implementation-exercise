@@ -3,10 +3,9 @@ const expect = require("chai").expect;
 chai.use(require("chai-http"));
 chai.use(require("chai-json-schema-ajv"));
 const server = require("../server");
-const { response } = require("express");
 const apiAddress = "http://localhost:" + (process.env.PORT || 3000);
 /*
-OPEN API Spoeification
+OPEN API Specification
 openapi: 3.0.0
 x-stoplight:
   id: kprm5u5uf4b5q
@@ -121,10 +120,11 @@ paths:
           required: true
         - schema:
             type: integer
+            default: 1
           in: query
           name: page
-          description: Page number for pagination (one page will have max 20 scores)
-          required: true
+          description: Page number for pagination (one page will have max 20 scores). Defaults to 1 if not provided.
+          required: false
 components:
   schemas:
     HighScore:
@@ -147,6 +147,7 @@ components:
         - level
         - userHandle
         - score
+        - timestamp
       x-stoplight:
         id: 08c8ilcn1g7f8
     UserLoginSignup:

@@ -5,7 +5,7 @@ chai.use(require("chai-json-schema-ajv"));
 const server = require("../server");
 const apiAddress = "http://localhost:" + (process.env.PORT || 3000);
 /*
-OPEN API Spoeification
+OPEN API Specification
 openapi: 3.0.0
 x-stoplight:
   id: kprm5u5uf4b5q

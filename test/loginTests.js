@@ -6,7 +6,7 @@ const server = require("../server");
 const apiAddress = "http://localhost:" + (process.env.PORT || 3000);
 const loginSuccessfulSchema = require("./testSchemas/loginSuccessfulSchema.json");
 /*
-OPEN API Spoeification
+OPEN API Specification
 openapi: 3.0.0
 x-stoplight:
   id: kprm5u5uf4b5q
@@ -210,7 +210,7 @@ describe("Testing login", function () {
         done();
       });
   });
-  it("Login with incorrect username and password", function (done) {
+  it("Login with incorrect password", function (done) {
     chai
       .request(apiAddress)
       .post("/login")
